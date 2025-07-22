@@ -133,9 +133,11 @@ patient2.add_medical_record("Animia")
 
 
 doctor1 = Doctor(name="Dr. Nour Hassan", age=40, gender="Female", doctor_id="D001", specialty="Cardiology")
+doctor2 = Doctor(name="Dr. Islam Ahmad", age=50, gender="Male", doctor_id="D002", specialty="Cardiology")
 
 
 appointment1 = Appointment(appointment_id="A001", patient=patient1, doctor=doctor1, date_time="2025-07-23 14:00")
+appointment2 = Appointment(appointment_id="A002", patient=patient2, doctor=doctor2, date_time="2025-07-23 12:00")
 
 
 print("-----------")
@@ -152,9 +154,9 @@ patient2.display_info()
 print("-----------\n")
 
 # عرض بيانات الطبيب
-doctor1.display_info()
+doctor2.display_info()
 print("-----------\n")
 
 # عرض ملخص الموعد
-appointment1.get_summary()
+appointment2.get_summary()
 
