@@ -27,7 +27,7 @@ class User (ABC):
     @abstractmethod
     def display_info(self):
         pass 
-    
+
 class Patient (User):
 
     def __init__(self, name, age, gender,patient_id):
@@ -123,3 +123,38 @@ class Appointment:
         print(f"- Patient: {self.__patient.get_name()}")
         print(f"- Doctor: Dr. {self.__doctor.get_name()} ({self.__doctor.get_specialty()})")
         print(f"- Date & Time: {self.__date_time}")
+
+patient1 =Patient("Ahmad Ali",67,"Male","P001")
+patient2 =Patient("Ibrahim Khalaf",55,"Male","P002")
+patient1.add_medical_record("Diabetes")
+patient1.add_medical_record("High Blood Pressure")
+patient2.add_medical_record("Diabetes")
+patient2.add_medical_record("Animia")
+
+
+doctor1 = Doctor(name="Dr. Nour Hassan", age=40, gender="Female", doctor_id="D001", specialty="Cardiology")
+
+
+appointment1 = Appointment(appointment_id="A001", patient=patient1, doctor=doctor1, date_time="2025-07-23 14:00")
+
+
+print("-----------")
+patient1.display_info()
+print("-----------\n")
+
+doctor1.display_info()
+print("-----------\n")
+
+appointment1.get_summary()
+# عرض بيانات المريض
+print("-----------")
+patient2.display_info()
+print("-----------\n")
+
+# عرض بيانات الطبيب
+doctor1.display_info()
+print("-----------\n")
+
+# عرض ملخص الموعد
+appointment1.get_summary()
+
